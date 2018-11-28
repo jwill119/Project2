@@ -1,5 +1,5 @@
-// COSC 2030 project 02
 // node.h
+// COSC 2030 project 02
 // Chase Austin, Jacob Williams
 // Created 11/28/2018
 // Last modified: 11/28/2018
