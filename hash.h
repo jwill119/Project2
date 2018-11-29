@@ -31,7 +31,7 @@ using std::hex;
 //last it sjanges the hashs number in to a string 
 string hash(string parent_ID , string raw_E)
 { 
-  unsigned int hash_number;
+  unsigned long int hash_number;// i thought it may overflow in the for loop CA
   string output,to_hash;
   to_hash = parent_ID + raw_E;
   
