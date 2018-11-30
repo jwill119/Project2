@@ -63,7 +63,7 @@ class Trackingtree
       //changes the rew_enent in the input node?? 
       
       //??C.A. maybe we should ask witch node in the function,rather than input wicth node??
-      void change_raw_EVENT(int index);
+      void change_raw_EVENT();
       
  
       //??C.A. thought it would be a good idea to have a index value 
