@@ -32,10 +32,5 @@ using std::hex;
 string hash(string parent_ID , string raw_E);
 
 string hash(string parent_ID, string raw_E,string ID,string L_hash, string R_hash);
-  
-  
-  return output;
-}
-
-
+ 
 #endif 
