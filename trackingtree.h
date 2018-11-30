@@ -19,6 +19,7 @@ using std::string;
 #include <iostream>
 using std::cout;
 using std::cin;
+using std::endl;
 #include <vector>
 using std::vector;
 
@@ -68,17 +69,17 @@ class Trackingtree
       //??C.A. thought it would be a good idea to have a index value 
       // not going to put in yet 
       //resets the index to 1 
-      //void begining();
+      void begining();
  
       //sets the index to the end 
       //(last node that as a raw EVENT)
-      //void end();
+      void end();
  
       //sets the index to the inputed number 
-      //void set_index(unsigned long int new_index);
+      void set_index(unsigned long int new_index);
  
       //return the value of the index 
-      // unsigned long int position(); 
+      unsigned long int position(); 
   private:
   
       //stores the number of (live) nodes in the tree 
@@ -91,11 +92,12 @@ class Trackingtree
       //??where we need it 
       int number_of_levels;
       
-      //the main part of the Tracking tree were all of 
+      //the main part of the Tracking tree where all of 
       //the nodes are stored 
       vector<node> tree;
       
-      //unsigned long int index; 
+      //current position in the tree 
+      unsigned long int index; 
 };
 
 #endif
