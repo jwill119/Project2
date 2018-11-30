@@ -23,3 +23,5 @@ We will have headers and cpp files for each of several options:
 !?I trid to make comments using ?? and !! as indicators of Qustions (??) or as things that we need to do or work on still (!!) 
 once, the comment is not need or answered we can delete the comment if one of us feel that we dont need it any more?!
 
+!?thou i didnt leave them in a few areas?!
+
