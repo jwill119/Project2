@@ -64,8 +64,21 @@ class Trackingtree
       //??C.A. maybe we should ask witch node in the function,rather than input wicth node??
       void change_raw_EVENT(int index);
       
-      
-      
+ 
+      //??C.A. thought it would be a good idea to have a index value 
+      // not going to put in yet 
+      //resets the index to 1 
+      //void begining();
+ 
+      //sets the index to the end 
+      //(last node that as a raw EVENT)
+      //void end();
+ 
+      //sets the index to the inputed number 
+      //void set_index(unsigned long int new_index);
+ 
+      //return the value of the index 
+      // unsigned long int position(); 
   private:
   
       //stores the number of (live) nodes in the tree 
@@ -82,6 +95,7 @@ class Trackingtree
       //the nodes are stored 
       vector<node> tree;
       
+      //unsigned long int index; 
 };
 
 #endif
