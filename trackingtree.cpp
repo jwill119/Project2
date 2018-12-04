@@ -62,18 +62,32 @@ void trackingtree::add_node() {
     new_node.setEVENT(raw_event); 
         
     tree.push_back(new_node);  
-    
     index++;
     number_of_nodes++;
   }   
  update_node(index);
 }
 
-void trackingtree::update_node(int index);
+void trackingtree::update_node(int index_in);
 {
    //hashs the ID of the new node, and stores new ID 
-    string ID = hash(new_node.getPID(), new_node.getEVENT());
-    new_node.setID(ID);
+    string ID = hash(tree.at(index_in).getPID(),tree.at(index_in).getEVENT());
+    tree.at(index_in).updateID(ID);
+    if(number_of_node > 1)
+    {
+      if(index_in%2 == 0)
+      string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
+                           tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
+                           tree.at(index_in)getRHASH());      
+      tree.at((index_in/2)).updateLHASh(hash)
+    }else if(index_in%2 == 1)
+    {
+      string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
+                           tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
+                           tree.at(index_in)getRHASH());      
+      tree.at((index_in/2)).updateLHASh(hash)      
+    } 
+  update_node((index_in/2))
 }
 
 //void trackingtree::update_tree()
