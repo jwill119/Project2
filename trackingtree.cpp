@@ -40,10 +40,6 @@ void trackingtree::add_node()
     cin >> raw_event;
     new_node.setEVENT(raw_event); 
     
-    //hashs the ID of the new node 
-    string ID = hash(new_node.getPID(), new_node.getEVENT());
-    new_node.setID(ID);
-    
     tree.push_back(new_node);
     number_of_nodes =1;
   }else 
@@ -59,11 +55,7 @@ void trackingtree::add_node()
     cout << "Enter raw event : ";
     cin >> raw_event;
     new_node.setEVENT(raw_event); 
-    
-    //hashs the ID of the new node, and stores new ID 
-    string ID = hash(new_node.getPID(), new_node.getEVENT());
-    new_node.setID(ID);
-    
+        
     tree.push_back(new_node);  
     
     number_of_nodes += 1;
@@ -73,13 +65,15 @@ void trackingtree::add_node()
 
 void trackingtree::update_node(int index);
 {
-
+   //hashs the ID of the new node, and stores new ID 
+    string ID = hash(new_node.getPID(), new_node.getEVENT());
+    new_node.setID(ID);
 }
 
-void trackingtree::update_tree()
-{
+//void trackingtree::update_tree()
+//{
 
-}
+//}
 
 void trackingtree::print_node(int index)
 {
