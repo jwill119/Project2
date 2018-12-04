@@ -11,9 +11,8 @@
 
 trackingtree::trackingtree()
 {
-  index = 1;            //sets index to 1 
-  number_of_levels =1;  //sets the numbers of level in the tree to 1  
-  number_of_nodes =0;   //sets the number of node in the tree to 0
+  index = 0;            //sets index to 1 
+  number_of_nodes = 0;   //sets the number of node in the tree to 0
   add_node();           //call the function add_node to add the root node ofthe tree
 }
 
@@ -23,10 +22,9 @@ trackingtree::~trackingtree()
 }
 
 
-void trackingtree::add_node()
-{
+void trackingtree::add_node() {
   if(tree.empty()) {
-    node new_node;//set new_node as a node 
+    Node new_node;//set new_node as a node 
 
     // Root node's PID is randomly generated from time data
     clock_t theClock = clock();
@@ -37,21 +35,21 @@ void trackingtree::add_node()
 
     string random_PID = hash(timeStr,clockStr);
 
-    //sets the PID of the root node with a random string !!C.A. didn't add random string gen yet!!
+    //sets the PID of the root node with a random string
     new_node.updatePID(random_PID)
     
       
-    // asks for new event to be inputed then stores new event in the node 
+    // asks for new event to be inputted, then stores new event in the node 
     string  raw_event;            
-    cout << "Enter raw event : ";
+    cout << "Enter raw event (maximum 1024 characters): ";
     cin >> raw_event;
     new_node.setEVENT(raw_event); 
     
     tree.push_back(new_node);
-    number_of_nodes =1;
-  }else 
-  {
-    node new_node = new node;//set new_node as a node 
+    index = 1;
+    number_of_nodes = 1;
+  } else {
+    Node new_node;//set new_node as a node 
     
     //adds the PID to the new node 
     string PID = tree.at((index/2)).getID;
@@ -65,9 +63,10 @@ void trackingtree::add_node()
         
     tree.push_back(new_node);  
     
-    number_of_nodes += 1;
+    index++;
+    number_of_nodes++;
   }   
-  update_tree();  
+ update_node(index);
 }
 
 void trackingtree::update_node(int index);
@@ -82,50 +81,48 @@ void trackingtree::update_node(int index);
 
 //}
 
-void trackingtree::print_node(int index)
-{
+void trackingtree::print_node(int index) {
 
 }
 
-void trackingtree::print_tree()
-{
+void trackingtree::print_tree() {
 
 }
 
-void trackingtree::change_raw_EVENT(unsigned long int index)
-{   
+void trackingtree::change_raw_EVENT(unsigned long int index) {   
   unsigned long int index_CRE;
-  cout<<"Which event do you want to change? Enter an integer index."<<endl;
-  cout<<"Number of node is :"<<number_of_nodes<<endl;
+  cout<< "Which event do you want to change?" <<endl;
+  cout << "There are currently " << number_of_nodes << " entries in the tracking tree." << endl;
+  cout << "Enter an integer index : ";
   cin>>index_CRE;
+  cout << endl;
+
+  cout << "The current node: " << endl;
+  print_node(index_CRE);
+  cout << endl;
   
-  print_node(index_CRE);  //calls print_node 
-  
-  cout<<"Enter changes to the node's event";
+  cout << "Enter changes to the node's event: " << endl;
   string event;
-  cin>>event;
+  cin >> event;
   tree.at(index_CRE).setEVENT(event);
   
   update_node(index_CRE);
-  update_tree();  
+
+  cout << "Tracking tree updated." << endl << endl;
 }
 
-void trackingtree::begining()
-{
+void trackingtree::beginning() {
   index = 1;
 }
 
-void trackingtree::end()
-{
+void trackingtree::end() {
   index = number_of_nodes;
 }
 
-void trackingtree::set_index(unsigned long int new_index)
-{
+void trackingtree::set_index(unsigned long int new_index) {
   index = new_index;
 }
 
-unsigned long int trackingtree::position()
-{
+unsigned long int trackingtree::position() {
   return index;
 }
