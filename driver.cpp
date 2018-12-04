@@ -8,19 +8,28 @@
 #include "trackingtree.h"
 
 
-int main()
-{
-  cout<<"welcome to the tracking tree"<<endl:
-  string commad;
-   cout << "Enter commad: ";
-  cin >> commad;
-  while(commad != "exit") 
-  {
-  
+int main() {
+  cout << "Welcome to the tracking tree!" << endl;
+  cout << "This custom data structure stores an entry (up to 1024 characters)"
+      << endl << "and tracks all changes to the structure." << endl;
+  cout << "For all your sensitive information needs!" << endl << endl;
+  string command;
+
+  cout << "Enter a command: ";
+  cin >> command;
+  while(command != "exit") {
+      if (command == "add") {
+      } else if (command == "exit") {
+          exit(0);
+      } else {
+          cout << "Known commands: " << endl;
+          cout << "add (Adds a node); " << endl;
+          cout << "exit (Exits the program)" << endl;
+          cout << endl;
+      }
     
-    
-  cout << "Enter commad: ";
-  cin >> commad;
+  cout << "Enter a command: ";
+  cin >> command;
   }
 
 

@@ -28,45 +28,26 @@ class Trackingtree
       Trackingtree();
       ~Trackingtree();      
       
-      //adds a new nodes to the tree and if needed adds a new level 
+      //adds a new node to the tree 
       void add_node();
       
-      //update_node set the ID of the node at the input index using the hasd function 
-      
-      //??C.A. may just update all elements in the node,so we  can just call update_node in the 
-      //update_tree so that we just make one function that updates but has checks
-      //so it knows if the node it is updateing is new or not??
-      
+      //updates the relevant hashes in the node
       void update_node(int index);
       
-      //update_tree set the node's parnet's RHASH or LHASH and pushs the last RHASH or LHASH 
-      //on to the either the RHIST or LHIST
-      //then flow up 
-      
-      //void update_tree();
       
       //prints the all the node's elements
-      //??C.A. didn't know if we want to print by the ID of the Node too?? 
-      
       void print_node(int index);        
      
-      //Void print_node(string ID);
-      
-       //prints the all nodes in the tree 
-       
-       //??C.A. was thinking of doing this by level.
+      // prints the entire tree
       void print_tree(void);
       
-      //changes the rew_enent in the specified node
+      // changes the rew_enent in the specified node
       void change_raw_EVENT(unsigned long int index);
  
-      //??C.A. thought it would be a good idea to have a index value 
-      // not going to put in yet 
       //resets the index to 1 
       void beginning(void);
  
-      //sets the index to the end 
-      //(last node that has a raw EVENT)
+      //sets the index to the last node in the tree
       void end(void);
  
       //sets the index to the given number 
@@ -79,10 +60,10 @@ class Trackingtree
       // Vector of Nodes (primary data member)
       vector<Node> tree;
 
-      //Total number of nodes in the tree 
+      // Total number of nodes in the tree 
       unsigned long int number_of_nodes;
       
-      //Current position in the tree 
+      // Current position in the tree 
       unsigned long int index; 
 };
 

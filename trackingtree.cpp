@@ -90,17 +90,21 @@ void trackingtree::update_node(int index_in);
   update_node((index_in/2))
 }
 
-//void trackingtree::update_tree()
-//{
-
-//}
-
 void trackingtree::print_node(int index) {
+    cout << "This is node " << index << ", with ID " << tree.at(index).getID() "." << endl;
+    cout << "The raw event is as follows: " << endl;
+    cout << tree.at(index).getEVENT() << endl;
+    if (index > 1) {
+        cout << "The parent is node " << index/2 << ", with ID " << tree.at(index/2).getID() "." << endl;
+    }
+    cout << endl;
 
 }
 
 void trackingtree::print_tree() {
-
+    for (int i = 0; i < number_of_nodes; i++) {
+        print_node(i);
+    }
 }
 
 void trackingtree::change_raw_EVENT(unsigned long int index) {   
