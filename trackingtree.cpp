@@ -3,15 +3,11 @@
 // Chase Austin, Jacob Williams
 // Created: 11/29/2018
 
-
-
+#include <ctime>
 #include <cstlib>
 #include "trackingtree.h"
 #include "hash.h"
 #include "node.h"
-
-
-
 
 trackingtree::trackingtree()
 {
@@ -31,7 +27,16 @@ void trackingtree::add_node()
 {
   if(tree.empty()) {
     node new_node;//set new_node as a node 
-    string random_PID = "not_done";
+
+    // Root node's PID is randomly generated from time data
+    clock_t theClock = clock();
+    time_t theTime = time();
+
+    string timeStr = time.str();
+    string clockStr = clock.str(); 
+
+    string random_PID = hash(timeStr,clockStr);
+
     //sets the PID of the root node with a random string !!C.A. didn't add random string gen yet!!
     new_node.updatePID(random_PID)
     
