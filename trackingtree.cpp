@@ -21,8 +21,7 @@ trackingtree::trackingtree()
 
 trackingtree::~trackingtree()
 {
-  
-  
+   // Empty destructor 
 }
 
 
@@ -96,7 +95,7 @@ void trackingtree::print_tree()
 void trackingtree::change_raw_EVENT()
 {   
   unsigned long int index_CRE;
-  cout<<"witch event were you like to change."<<endl;
+  cout<<"Which event do you want to change? Enter an integer index."<<endl;
   cout<<"Number of node is :"<<number_of_nodes<<endl;
   cin>>index_CRE;
   
