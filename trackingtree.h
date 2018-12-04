@@ -48,7 +48,7 @@ class Trackingtree
       //on to the either the RHIST or LHIST
       //then flow up 
       
-      void update_tree();
+      //void update_tree();
       
       //prints the all the node's elements
       //??C.A. didn't know if we want to print by the ID of the Node too?? 

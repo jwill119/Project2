@@ -28,7 +28,7 @@ using std::hex;
 //appends the strings togeght then hashs that new string 
 //by taking the string and turning it in to a number set 
 //then uses a function to hash the number set 
-//last it sjanges the hashs number in to a string 
+//last it changes the hash's number into a string 
 string hash(string parent_ID , string raw_E);
 
 string hash(string parent_ID, string raw_E,string ID,string L_hash, string R_hash);
