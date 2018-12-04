@@ -79,13 +79,13 @@ void trackingtree::update_node(int index_in);
       string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
                            tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
                            tree.at(index_in)getRHASH());      
-      tree.at((index_in/2)).updateLHASh(hash)
+      tree.at((index_in/2)).updateLHASH(hash)
     }else if(index_in%2 == 1)
     {
       string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
                            tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
                            tree.at(index_in)getRHASH());      
-      tree.at((index_in/2)).updateLHASh(hash)      
+      tree.at((index_in/2)).updateRHASH(hash)      
     } 
   update_node((index_in/2))
 }
