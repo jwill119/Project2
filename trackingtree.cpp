@@ -27,8 +27,7 @@ trackingtree::~trackingtree()
 
 void trackingtree::add_node()
 {
-  if(tree.empty() == true && number_of_nodes <=1)
-  {
+  if(tree.empty()) {
     node new_node = new node;//set new_node as a node 
     string random_PID = "not_done";
     //sets the PID of the root node with a random string !!C.A. didn't add random string gen yet!!
