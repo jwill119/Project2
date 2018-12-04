@@ -43,11 +43,13 @@ void Node::updatePID(string thePID) {
 void Node::updateLHASH(string theLHASH) {
     if (theLHASH.length > 8) theLHASH.resize(8);
     LHASH = theLHASH;
+    updateLHIST(theLHASH);
 }
 
 void Node::updateRHASH(string theRHASH) {
     if (theRHASH.length > 8) theRHASH.resize(8);
     RHASH = theRHASH;
+    updateRHIST(theRHASH);
 }
 
 void Node::updateLHIST(string theLHIST) {
