@@ -24,7 +24,7 @@ trackingtree::~trackingtree()
 
 void trackingtree::add_node() {
   if(tree.empty()) {
-    Node new_node;//set new_node as a node 
+    Node new_node;
 
     // Root node's PID is randomly generated from time data
     clock_t theClock = clock();
@@ -71,22 +71,21 @@ void trackingtree::add_node() {
 void trackingtree::update_node(int index_in);
 {
    //hashes the ID of the new node, and stores new ID 
-    string ID = hash(tree.at(index_in).getPID(),tree.at(index_in).getEVENT());
-    tree.at(index_in).updateID(ID);
-    if(number_of_node > 1)
-    {
-      if(index_in%2 == 0)
-      string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
+    string newID = hash(tree.at(index_in).getPID(),tree.at(index_in).getEVENT());
+    tree.at(index_in).updateID(newID);
+
+    if (number_of_node > 1) {
+        if(index_in%2 == 0) {
+            string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
                            tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
                            tree.at(index_in)getRHASH());      
-      tree.at((index_in/2)).updateLHASH(hash)
-    }else if(index_in%2 == 1)
-    {
-      string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
+            tree.at((index_in/2)).updateLHASH(update)
+        } else if(index_in%2 == 1) {
+            string update = hash(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
                            tree.at(index_in).getID(), tree.at(index_in)getLHASH(), 
                            tree.at(index_in)getRHASH());      
-      tree.at((index_in/2)).updateRHASH(hash)      
-    } 
+            tree.at((index_in/2)).updateRHASH(update);
+        } 
   update_node((index_in/2))
 }
 

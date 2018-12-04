@@ -10,11 +10,13 @@
 
 // The constructor
 Node::Node() {
-    ID = NULL;
-    PID = NULL;
-    EVENT = NULL;
-    LHASH = NULL;
-    RHASH = NULL;
+    ID = "";
+    PID = "";
+    EVENT = "";
+    LHASH = "";
+    RHASH = "";
+    LHIST.resize(0);
+    RHIST.resize(0);
 }
 
 // Empty destructor
