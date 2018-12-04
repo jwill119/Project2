@@ -10,7 +10,18 @@
 
 int main()
 {
-
+  cout<<"welcome to the tracking tree"<<endl:
+  string commad;
+   cout << "Enter commad: ";
+  cin >> commad;
+  while(commad != "exit") 
+  {
+  
+    
+    
+  cout << "Enter commad: ";
+  cin >> commad;
+  }
 
 
 
