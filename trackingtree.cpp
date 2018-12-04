@@ -15,7 +15,7 @@ trackingtree::trackingtree()
 {
   index = 1;            //sets index to 1 
   number_of_levels =1;  //sets the numbers of level in the tree to 1  
-  number_of_nodes =0;   //sets the number of node in the tree to 1
+  number_of_nodes =0;   //sets the number of node in the tree to 0
   add_node();           //call the function add_node to add the root node ofthe tree
 }
 
@@ -92,7 +92,7 @@ void trackingtree::print_tree()
 
 }
 
-void trackingtree::change_raw_EVENT()
+void trackingtree::change_raw_EVENT(unsigned long int index)
 {   
   unsigned long int index_CRE;
   cout<<"Which event do you want to change? Enter an integer index."<<endl;
