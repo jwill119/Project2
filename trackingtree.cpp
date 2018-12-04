@@ -70,7 +70,7 @@ void trackingtree::add_node() {
 
 void trackingtree::update_node(int index_in);
 {
-   //hashs the ID of the new node, and stores new ID 
+   //hashes the ID of the new node, and stores new ID 
     string ID = hash(tree.at(index_in).getPID(),tree.at(index_in).getEVENT());
     tree.at(index_in).updateID(ID);
     if(number_of_node > 1)
