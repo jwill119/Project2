@@ -13,7 +13,7 @@ trackingtree::trackingtree()
 {
   index = 0;            //sets index to 1 
   number_of_nodes = 0;   //sets the number of node in the tree to 0
-  //!!This hurts the driver 
+  //!!This, make the driver harder then it need to be  
   //add_node();           //call the function add_node to add the root node ofthe tree
   
 }
