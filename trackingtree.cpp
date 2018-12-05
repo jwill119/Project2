@@ -145,3 +145,7 @@ void trackingtree::set_index(unsigned long int new_index) {
 unsigned long int trackingtree::position() {
   return index;
 }
+unsigned long int trackingtree::get_number_of_nodes()
+{ 
+  return number_of_nodes;
+}
