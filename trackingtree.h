@@ -55,6 +55,9 @@ class Trackingtree
  
       //returns the value of the index 
       unsigned long int position(void); 
+  
+      //returns the value of the number_of_node
+      unsigned long int get_number_of_nodes();
 
   private:
       // Vector of Nodes (primary data member)
