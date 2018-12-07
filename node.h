@@ -36,7 +36,7 @@
 #ifndef NODE_H
 #define NODE_H
 
-
+#include <vector>
 #include <string>
 using namespace std;
 
@@ -64,17 +64,13 @@ class Node {
         string getRHIST(void);
 
     private:
-        string ID(8);
-        string PID(8);
-        string EVENT(1024);
-        string LHASH(8);
-        string RHASH(8);
-        vector<string> LHIST;
-        vector<string> RHIST;
+        string ID;
+        string PID;
+        string EVENT;
+        string LHASH;
+        string RHASH;
+        string LHIST;
+        string RHIST;
 
 };
-
-
-
-
 #endif

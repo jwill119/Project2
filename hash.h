@@ -19,11 +19,11 @@
 #include <string>
 #include <climits> 
 
-using std::INT_MAX;
+//using std::INT_MAX;
 using std::string;
-using std::stringstream ;
+using std::stringstream;
 using std::hex;
-
+using std::to_string;
 
 // Two functions that take inputs of type string.
 //  One takes two strings (to hash PARENT_ID and RAW_EVENT); 
@@ -32,7 +32,7 @@ using std::hex;
 // second, they are converted to a number;
 // the number is converted into hexadecimal,
 // which is then returned to string form (and truncated to 8 characters).
-string hash(string parent_ID , string raw_E);
-string hash(string parent_ID, string raw_E, string ID, string L_hash, string R_hash);
+string hash_1(string parent_ID , string raw_E);
+string hash_2(string parent_ID, string raw_E, string ID, string L_hash, string R_hash);
  
 #endif 

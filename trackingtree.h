@@ -4,16 +4,19 @@
 // Created: 11/28/2018
 // Last modified: 12/4/2018
 
-#ifndef TRACKINGTREE_h_
-#define TRACKINGTREE_h_
+#ifndef TRACKINGTREE_h
+#define TRACKINGTREE_h
 
 
 #include "hash.h"
 #include "node.h"
 
+#include <ctime>
+
 #include <string>
 #include <iostream>
 #include <vector>
+
 using std::string;
 using std::cout;
 using std::cin;
@@ -23,8 +26,7 @@ using std::vector;
 
 class Trackingtree
 {
-  public:
-      
+  public:      
       Trackingtree();
       ~Trackingtree();      
       
@@ -32,9 +34,8 @@ class Trackingtree
       void add_node();
       
       //updates the relevant hashes in the node
-      void update_node(int index);
-      
-      
+      void update_node(int index_in);
+            
       //prints the all the node's elements
       void print_node(int index);        
      
@@ -42,7 +43,7 @@ class Trackingtree
       void print_tree(void);
       
       // changes the rew_enent in the specified node
-      void change_raw_EVENT(unsigned long int index);
+      void change_raw_EVENT();
  
       //resets the index to 1 
       void beginning(void);

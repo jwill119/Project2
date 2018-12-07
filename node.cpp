@@ -28,65 +28,72 @@ Node::~Node() {
 //  is done in the tree class file. This just pushes the values
 //  into the node.
 void Node::setEVENT(string theEvent) {
-    if (theEvent.length > 1024) theEvent.resize(1024);
+    if (theEvent.length() > 1024) theEvent.resize(1024);
     EVENT = theEvent;
 }
 
 void Node::updateID(string theID) {
-    if (theID.length > 8) theID.resize(8);
+    if (theID.length() > 8) theID.resize(8);
     ID = theID;
 }
 
 void Node::updatePID(string thePID) {
-    if (thePID.length > 8) theID.resize(8);
+    if (thePID.length() > 8) thePID.resize(8);
     PID = thePID;
 }
 
 void Node::updateLHASH(string theLHASH) {
-    if (theLHASH.length > 8) theLHASH.resize(8);
+    if (theLHASH.length() > 8) theLHASH.resize(8);
     LHASH = theLHASH;
     updateLHIST(theLHASH);
 }
 
 void Node::updateRHASH(string theRHASH) {
-    if (theRHASH.length > 8) theRHASH.resize(8);
+    if (theRHASH.length() > 8) theRHASH.resize(8);
     RHASH = theRHASH;
     updateRHIST(theRHASH);
 }
 
 void Node::updateLHIST(string theLHIST) {
-    LHIST.push_back(theLHIST);
+    LHIST += theLHIST;
 }
 
 void Node::updateRHIST(string theRHIST) {
-    RHIST.push_back(theRHIST);
+	RHIST += theRHIST;
 }
 
 // Accessor functions
-string Node::getID(void) {
+string Node::getID(void)
+{
     return ID;
 }
 
-string Node::getPID(void) {
+string Node::getPID(void)
+{
     return PID;
 }
 
-string Node::getEVENT(void) {
+string Node::getEVENT(void)
+{
     return EVENT;
 }
 
-string Node::getLHASH(void) {
+string Node::getLHASH(void)
+{
     return LHASH;
 }
 
-string Node::getRHASH(void) {
+string Node::getRHASH(void) 
+{
     return RHASH;
 }
 
-string Node::getLHIST(void) {
+string Node::getLHIST(void)
+{
     return LHIST;
 }
 
-string Node::getRHIST(void) {
+string Node::getRHIST(void) 
+{
     return RHIST;
 }

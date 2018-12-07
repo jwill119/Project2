@@ -14,7 +14,7 @@ int main() {
       << endl << "and tracks all changes to the structure." << endl;
   cout << "For all your sensitive information needs!" << endl << endl;
   string command;
-  trackingtree our_tree;
+  Trackingtree our_tree;
   cout << "Enter a command: ";
   cin >> command;
   while(command != "exit") 
@@ -24,22 +24,24 @@ int main() {
         our_tree.add_node();        
       }else if(command == "print")
       {
-        our_tree.print_tree()
+		  our_tree.print_tree();
+
       }else if (command == "change event")
       {
-        our_tree.change_raw_EVENT();        
-      }esle if(command == "print node")
+        our_tree.change_raw_EVENT(); 
+
+      }else if(command == "print node")
       {
         
-        long node_at;
+		 unsigned long int node_at;
         cin >> node_at;
-        if(node_at <= our_tree.get_number_of_node() && node_at >= 1)
+        if(node_at <= our_tree.get_number_of_nodes() && node_at >= 1)
         {
            our_tree.print_node(node_at);
         }else
         { 
            cout<<"invalid Input for the index"<<endl;
-           cout<<"index between 1 and " <<our_tree.get_number_of_node()<< endl;
+           cout<<"index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
         }       
       }else if (command == "exit")       
       {
@@ -52,7 +54,7 @@ int main() {
           cout << "exit (Exits the program)" << endl;
           cout << "print (prints out the tree)"<<endl;
           cout << "change event (changes a node's event); " << endl;
-          cout << "print node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_node()<< endl;
+          cout << "print node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
           cout << endl;
       }
     
