@@ -109,7 +109,7 @@ void Trackingtree::print_node(int index)
 
 void Trackingtree::print_tree()
 {
-    for (unsigned long int i = 0; i < number_of_nodes; i++)
+    for (unsigned long int i = 0; i < number_of_nodes+1; i++)
 	{
         print_node(i);
     }
