@@ -10,8 +10,8 @@ using std::string;
 
 Trackingtree::Trackingtree()
 {
-  //index = 0;             //sets index to 1 
-  //number_of_nodes = 0;   //sets the number of node in the tree to 0
+  index_ = 0;             //sets index to 1 
+  number_of_nodes = 0;   //sets the number of node in the tree to 0
   //!!This, make the driver harder then it needs to be  
   //add_node();           //call the function add_node to add the root node ofthe tree
   
@@ -25,7 +25,8 @@ Trackingtree::~Trackingtree()
 
 void Trackingtree::add_node() 
 {
-  if(tree.empty()) {
+  if(tree.empty())
+  {
     Node new_node;
 
     // Root node's PID is randomly generated from time data
@@ -49,7 +50,7 @@ void Trackingtree::add_node()
     
     tree.push_back(new_node);
     index_ = 0;
-    number_of_nodes = 0;
+    number_of_nodes++;
   } else
   {
     Node new_node;//set new_node as a node 
@@ -77,7 +78,7 @@ void Trackingtree::update_node(int index_in)
 	string newID = hash_1(tree.at(index_in).getPID(), tree.at(index_in).getEVENT());
 	tree.at(index_in).updateID(newID);
 
-	if (number_of_nodes > 1)
+	if (index_in > 1)
 	{
 		if (index_in % 2 == 0) {
 			string update = hash_2(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
@@ -109,7 +110,7 @@ void Trackingtree::print_node(int index)
 
 void Trackingtree::print_tree()
 {
-    for (unsigned long int i = 0; i < number_of_nodes+1; i++)
+    for (unsigned long int i = 0; i < number_of_nodes; i++)
 	{
         print_node(i);
     }

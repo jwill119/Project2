@@ -26,7 +26,7 @@ int main() {
       {
 		  our_tree.print_tree();
 
-      }else if (command == "change event")
+      }else if (command == "change_event")
       {
         our_tree.change_raw_EVENT(); 
 
@@ -35,7 +35,7 @@ int main() {
         
 		 unsigned long int node_at;
         cin >> node_at;
-        if(node_at <= our_tree.get_number_of_nodes() && node_at >= 1)
+        if(node_at <= our_tree.get_number_of_nodes()-1 && node_at >= 0)
         {
            our_tree.print_node(node_at);
         }else
@@ -53,7 +53,7 @@ int main() {
           cout << "add (Adds a node); " << endl;
           cout << "exit (Exits the program)" << endl;
           cout << "print (prints out the tree)"<<endl;
-          cout << "change event (changes a node's event); " << endl;
+          cout << "change_event (changes a node's event); " << endl;
           cout << "print_node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
           cout << endl;
       }

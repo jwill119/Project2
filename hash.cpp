@@ -30,9 +30,9 @@ string hash_1(string parent_ID , string raw_E)
   hash_number %= (UINT_MAX-1);
 
   // Convert hexadecimal representation of the hash number to a string 
-  //stringstream thing;
-  //thing << hex << hash_number;
-  //output = thing.str();
+  stringstream thing;
+  thing << hex << hash_number;
+  output = thing.str();
   return output;
 }
 
@@ -56,8 +56,8 @@ string hash_2(string parent_ID, string raw_E,string ID,string L_hash, string R_h
   hash_number %= (UINT_MAX-1);
 
   // Convert hexadecimal representation of the hash number to a string
-  // stringstream thing;
-  // thing << hex << hash_number;
-  //output = thing.str();
+  stringstream thing;
+  thing << hex << hash_number;
+  output = thing.str();
   return output; 
 }

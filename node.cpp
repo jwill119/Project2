@@ -29,7 +29,7 @@ Node::~Node() {
 //  into the node.
 void Node::setEVENT(string theEvent) 
 {
-    if (theEvent.length() > 1024) theEvent.resize(1024);
+    //if (theEvent.length() > 1024) theEvent.resize(1024);
     EVENT = theEvent;
 }
 
