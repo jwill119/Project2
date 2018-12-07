@@ -2,6 +2,11 @@
 // COSC 2030 project 2
 // Chase Austin, Jacob Williams
 // Created: 11/29/2018
+// Last modified: 12/7/2018
+//
+// CURRENT STATE OF TESTING
+//  It appears that nodes may not be added, or at least printed, in the correct order
+//  Also, ID can end up looking like less than 8 characters
 
 #include "trackingtree.h"
 #include <string>
