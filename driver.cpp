@@ -35,7 +35,7 @@ int main() {
         
 		 unsigned long int node_at;
         cin >> node_at;
-        if(node_at <= our_tree.get_number_of_nodes()-1 && node_at >= 0)
+        if(node_at <= our_tree.get_number_of_nodes() && node_at >= 0)
         {
            our_tree.print_node(node_at);
         }else
