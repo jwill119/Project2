@@ -7,13 +7,14 @@
 #include <string>
 
 using std::string;
-
+using std::getline;
 Trackingtree::Trackingtree()
 {
   index_ = 0;             //sets index to 1 
   number_of_nodes = 0;   //sets the number of node in the tree to 0
+  
   //!!This, make the driver harder then it needs to be  
-  //add_node();           //call the function add_node to add the root node ofthe tree
+  //add_node();          //call the function add_node to add the root node ofthe tree
   
 }
 
@@ -28,7 +29,7 @@ void Trackingtree::add_node()
   if(tree.empty())
   {
     Node new_node;
-
+	tree.push_back(new_node);
     // Root node's PID is randomly generated from time data
     clock_t theClock = clock();
     time_t theTime = time(NULL);
@@ -43,9 +44,10 @@ void Trackingtree::add_node()
     
       
     // asks for new event to be inputted, then stores new event in the node 
-    string  raw_event;            
-    cout << "Enter raw event (maximum 1024 characters): ";
-    cin >> raw_event;
+    string  raw_event, line;
+    //cout << "Enter raw event (maximum 1024 characters): "<<endl;
+	getline(cin, raw_event);
+    
     new_node.setEVENT(raw_event); 
     
     tree.push_back(new_node);
@@ -61,8 +63,8 @@ void Trackingtree::add_node()
       
     // asks for new event to be inputed then stores new event in the node 
     string raw_event;            
-    cout << "Enter raw event : ";
-    cin >> raw_event;
+    //cout << "Enter raw event : "<<endl;
+	getline(cin, raw_event);
     new_node.setEVENT(raw_event); 
         
     tree.push_back(new_node);  
@@ -98,10 +100,15 @@ void Trackingtree::update_node(int index_in)
 
 void Trackingtree::print_node(int index)
 {
-    cout << "This is node " << index << ", with ID " << tree.at(index).getID() <<"." << endl;
+	if (index == 0)
+	{
+		return;
+	}
+	cout << "This is node " << index << ", with ID " << tree.at(index).getID() <<"." << endl;
     cout << "The raw event is as follows: " << endl;
     cout << tree.at(index).getEVENT() << endl;
-    if (index > 1) {
+    if (index > 1) 
+	{
         cout << "The parent is node " << index/2 << ", with ID " << tree.at(index/2).getID()<< "." << endl;
     }
     cout << endl;
