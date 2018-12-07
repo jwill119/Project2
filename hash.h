@@ -15,10 +15,9 @@
 #ifndef HASH_H
 #define HASH_H
 
-
-#include <string>
-#include <climits> 
-
+#include <string>       
+#include <iostream>     
+#include <sstream>
 //using std::INT_MAX;
 using std::string;
 using std::stringstream;

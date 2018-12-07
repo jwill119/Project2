@@ -30,7 +30,7 @@ int main() {
       {
         our_tree.change_raw_EVENT(); 
 
-      }else if(command == "print node")
+      }else if(command == "print_node")
       {
         
 		 unsigned long int node_at;
@@ -41,7 +41,7 @@ int main() {
         }else
         { 
            cout<<"invalid Input for the index"<<endl;
-           cout<<"index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
+           cout<<"index between 0 and " <<our_tree.get_number_of_nodes()<< endl;
         }       
       }else if (command == "exit")       
       {
@@ -54,7 +54,7 @@ int main() {
           cout << "exit (Exits the program)" << endl;
           cout << "print (prints out the tree)"<<endl;
           cout << "change event (changes a node's event); " << endl;
-          cout << "print node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
+          cout << "print_node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
           cout << endl;
       }
     

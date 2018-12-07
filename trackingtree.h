@@ -68,7 +68,7 @@ class Trackingtree
       unsigned long int number_of_nodes;
       
       // Current position in the tree 
-      unsigned long int index; 
+      unsigned long int index_; 
 };
 
 #endif

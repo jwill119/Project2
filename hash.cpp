@@ -15,19 +15,24 @@ string hash_1(string parent_ID , string raw_E)
   unsigned long int hash_number = 0;
   
   // Concatenate the inputs
-  string to_hash_1 = parent_ID + raw_E;
-  
+  string to_hash_1;
+  to_hash_1 += parent_ID;
+  to_hash_1 += raw_E;
   // Generate the hash number
   for (int index =0; index < to_hash_1.length(); index++)
   {
 	  hash_number = 13 * hash_number + to_hash_1[index];
   }  
 
+ 
+
   // The maximum number of 8-character hex strings
   hash_number %= (UINT_MAX-1);
 
   // Convert hexadecimal representation of the hash number to a string 
-  output = to_string(hash_number);
+  //stringstream thing;
+  //thing << hex << hash_number;
+  //output = thing.str();
   return output;
 }
 
@@ -51,8 +56,8 @@ string hash_2(string parent_ID, string raw_E,string ID,string L_hash, string R_h
   hash_number %= (UINT_MAX-1);
 
   // Convert hexadecimal representation of the hash number to a string
-  output = to_string(hash_number);
-  return output;
-  
-  return output;
+  // stringstream thing;
+  // thing << hex << hash_number;
+  //output = thing.str();
+  return output; 
 }

@@ -10,9 +10,9 @@ using std::string;
 
 Trackingtree::Trackingtree()
 {
-  index = 0;            //sets index to 1 
-  number_of_nodes = 0;   //sets the number of node in the tree to 0
-  //!!This, make the driver harder then it need to be  
+  //index = 0;             //sets index to 1 
+  //number_of_nodes = 0;   //sets the number of node in the tree to 0
+  //!!This, make the driver harder then it needs to be  
   //add_node();           //call the function add_node to add the root node ofthe tree
   
 }
@@ -48,13 +48,14 @@ void Trackingtree::add_node()
     new_node.setEVENT(raw_event); 
     
     tree.push_back(new_node);
-    index = 1;
-    number_of_nodes = 1;
-  } else {
+    index_ = 0;
+    number_of_nodes = 0;
+  } else
+  {
     Node new_node;//set new_node as a node 
     
     //adds the PID to the new node 
-    string PID = tree.at((index/2)).getID();
+    string PID = tree.at((index_/2)).getID();
 	new_node.updatePID(PID);
       
     // asks for new event to be inputed then stores new event in the node 
@@ -64,10 +65,10 @@ void Trackingtree::add_node()
     new_node.setEVENT(raw_event); 
         
     tree.push_back(new_node);  
-    index++;
+    index_++;
     number_of_nodes++;
   }   
- update_node(index);
+ update_node(index_);
 }
 
 void Trackingtree::update_node(int index_in)
@@ -139,21 +140,21 @@ void Trackingtree::change_raw_EVENT()
 
 void Trackingtree::beginning()
 {
-  index = 1;
+  index_ = 1;
 }
 
 void Trackingtree::end() {
-  index = number_of_nodes;
+  index_ = number_of_nodes;
 }
 
 void Trackingtree::set_index(unsigned long int new_index) 
 {
-  index = new_index;
+  index_ = new_index;
 }
 
 unsigned long int Trackingtree::position()
 {
-  return index;
+  return index_;
 }
 
 unsigned long int Trackingtree::get_number_of_nodes()

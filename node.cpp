@@ -27,7 +27,8 @@ Node::~Node() {
 //  Generation of what the fields are actually supposed to be
 //  is done in the tree class file. This just pushes the values
 //  into the node.
-void Node::setEVENT(string theEvent) {
+void Node::setEVENT(string theEvent) 
+{
     if (theEvent.length() > 1024) theEvent.resize(1024);
     EVENT = theEvent;
 }
