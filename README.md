@@ -4,8 +4,6 @@
 // Created: 11/26/2018
 // Last modified: 11/30/2018
 
-//!! there is a stack overflow error thast happens when usinf our hash function !!
-
 ## Project organization
 
 We will have headers and cpp files for each of several options:
