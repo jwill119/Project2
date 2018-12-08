@@ -38,7 +38,6 @@
 
 #include <vector>
 #include <string>
-#include <iostream>
 using namespace std;
 
 
@@ -61,8 +60,8 @@ class Node {
         string getEVENT(void);
         string getLHASH(void);
         string getRHASH(void);
-        vector<string> getLHIST(void);
-        vector<string> getRHIST(void);
+        string getLHIST(void);
+        string getRHIST(void);
 
     private:
         string ID;
@@ -70,8 +69,8 @@ class Node {
         string EVENT;
         string LHASH;
         string RHASH;
-        vector<string> LHIST;
-        vector<string> RHIST;
+        string LHIST;
+        string RHIST;
 
 };
 #endif

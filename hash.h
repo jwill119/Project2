@@ -18,7 +18,6 @@
 #include <string>       
 #include <iostream>     
 #include <sstream>
-#include <climits>
 //using std::INT_MAX;
 using std::string;
 using std::stringstream;
