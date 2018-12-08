@@ -15,7 +15,7 @@ using std::string;
 using std::getline;
 Trackingtree::Trackingtree()
 {
-  index_ = 0;             //sets index to 1 
+  index_ = 0;            
   number_of_nodes = 0;   //sets the number of node in the tree to 0
   
   //!!This, make the driver harder then it needs to be  
@@ -29,12 +29,10 @@ Trackingtree::~Trackingtree()
 }
 
 
-void Trackingtree::add_node() 
-{
-  if(tree.empty())
-  {
+void Trackingtree::add_node() {
+  if (tree.empty()) {
     Node new_node;
-	tree.push_back(new_node);
+    
     // Root node's PID is randomly generated from time data
     clock_t theClock = clock();
     time_t theTime = time(NULL);
@@ -46,20 +44,17 @@ void Trackingtree::add_node()
 
     //sets the PID of the root node with a random string
 	new_node.updatePID(random_PID);
-    
       
     // asks for new event to be inputted, then stores new event in the node 
-    string  raw_event, line;
-    //cout << "Enter raw event (maximum 1024 characters): "<<endl;
+    string raw_event;
 	getline(cin, raw_event);
-    
     new_node.setEVENT(raw_event); 
-    
+
     tree.push_back(new_node);
-    index_ = 0;
+    index_++;
     number_of_nodes++;
-  } else
-  {
+
+  } else {
     Node new_node;//set new_node as a node 
     
     //adds the PID to the new node 
@@ -68,7 +63,6 @@ void Trackingtree::add_node()
       
     // asks for new event to be inputed then stores new event in the node 
     string raw_event;            
-    //cout << "Enter raw event : "<<endl;
 	getline(cin, raw_event);
     new_node.setEVENT(raw_event); 
         
@@ -76,7 +70,7 @@ void Trackingtree::add_node()
     index_++;
     number_of_nodes++;
   }   
- update_node(index_);
+  update_node(index_);
 }
 
 void Trackingtree::update_node(int index_in)
@@ -105,17 +99,18 @@ void Trackingtree::update_node(int index_in)
 
 void Trackingtree::print_node(int index)
 {
-	if (index == 0)
-	{
+	if (index == 0) {
 		return;
 	}
+
 	cout << "This is node " << index << ", with ID " << tree.at(index).getID() <<"." << endl;
     cout << "The raw event is as follows: " << endl;
     cout << tree.at(index).getEVENT() << endl;
-    if (index > 1) 
-	{
+
+    if (index > 1) {
         cout << "The parent is node " << index/2 << ", with ID " << tree.at(index/2).getID()<< "." << endl;
     }
+
     cout << endl;
 
 }
@@ -151,8 +146,7 @@ void Trackingtree::change_raw_EVENT()
   cout << "Tracking tree updated." << endl << endl;
 }
 
-void Trackingtree::beginning()
-{
+void Trackingtree::beginning() {
   index_ = 1;
 }
 
@@ -160,17 +154,19 @@ void Trackingtree::end() {
   index_ = number_of_nodes;
 }
 
-void Trackingtree::set_index(unsigned long int new_index) 
-{
+void Trackingtree::set_index(unsigned long int new_index) {
   index_ = new_index;
 }
 
-unsigned long int Trackingtree::position()
-{
+
+unsigned long int Trackingtree::position() {
   return index_;
 }
 
-unsigned long int Trackingtree::get_number_of_nodes()
-{ 
+unsigned long int Trackingtree::get_number_of_nodes() { 
   return number_of_nodes;
+}
+
+bool Trackingtree::is_empty(void) {
+    return tree.empty();
 }

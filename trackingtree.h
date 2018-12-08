@@ -60,6 +60,9 @@ class Trackingtree
       //returns the value of the number_of_node
       unsigned long int get_number_of_nodes();
 
+      // returns whether tree is empty
+      bool is_empty();
+
   private:
       // Vector of Nodes (primary data member)
       vector<Node> tree;
