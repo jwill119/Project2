@@ -19,4 +19,9 @@ We will have headers and cpp files for each of several options:
     * The main file
 
 
+#### Testing notes
+Last updated: 12/8/2018, Jacob Williams
 
+I am working on trackingtree.cpp, trying to get adding-nodes to work.
+Currently it appears that new events are not properly stored in the tracking tree. Additionally,
+the time does not hash into the random PID correctly.

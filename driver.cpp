@@ -19,20 +19,18 @@ int main() {
   cin >> command;
   while(command != "exit") {
       if (command == "add") {
-        our_tree.add_node();        
+        our_tree.add_node();
       } else if(command == "print") {
-		  our_tree.print_tree();
+          our_tree.print_tree();
 
       } else if (command == "change_event") {
-        our_tree.change_raw_EVENT(); 
+          our_tree.change_raw_EVENT(); 
 
       } else if(command == "print_node") {
           unsigned long int node_at;
           cin >> node_at;
-          if(node_at <= our_tree.get_number_of_nodes() && node_at >= 0) {
-           our_tree.print_node(node_at);
-          } else if (our_tree.is_empty()) {
-              cout << "The tree is empty! You can't print an empty tree." << endl << endl;
+          if (node_at <= our_tree.get_number_of_nodes() && node_at >= 0) {
+              our_tree.print_node(node_at);
           } else { 
               cout << "Invalid input for the index." << endl;
               cout << "Enter index between 0 and " << our_tree.get_number_of_nodes() 
