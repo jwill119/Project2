@@ -50,10 +50,10 @@ int main() {
       {
           cout << endl;
           cout << "Known commands: " << endl;
-          cout << "add <event> (Adds a node's event ); " << endl;
+          cout << "add <event> (Adds a node's event); " << endl;
           cout << "exit (Exits the program)" << endl;
           cout << "print (prints out the tree)"<<endl;
-          cout << "change_event <event> (changes a node's event); " << endl;
+          cout << "change_event (changes a node's event); " << endl;
           cout << "print_node <index> (prints out the node at index) index between 1 and " <<our_tree.get_number_of_nodes()<< endl;
           cout << endl;
       }

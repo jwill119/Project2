@@ -89,7 +89,7 @@ void Trackingtree::update_node(int index_in)
 				tree.at(index_in).getRHASH());
 			tree.at((index_in / 2)).updateLHASH(update);
 		}
-		else if (index_in % 2 == 1) 
+		if (index_in % 2 == 1) 
 		{
 			string update = hash_2(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
 				tree.at(index_in).getID(), tree.at(index_in).getLHASH(),
@@ -109,14 +109,27 @@ void Trackingtree::print_node(int index)
 	cout << "This is node " << index << ", with ID " << tree.at(index).getID() <<"." << endl;
     cout << "The raw event is as follows: " << endl;
     cout << tree.at(index).getEVENT() << endl;
-	cout << "The LHASH is as follows: " << endl;
-	cout << tree.at(index).getLHASH() << endl;
-	cout << "The RHASH is as follows: " << endl;
-	cout << tree.at(index).getRHASH() << endl;
-	cout << "The LHIST is as follows: " << endl;
-	cout << tree.at(index).getLHIST() << endl;
-	cout << "The RHASH is as follows: " << endl;
-	cout << tree.at(index).getRHIST() << endl;
+	if (tree.at(index).getLHASH() != "")
+	{
+		cout << "The LHASH is as follows: " << endl;
+		cout << tree.at(index).getLHASH() << endl;
+	}
+	if (tree.at(index).getRHASH() != "")
+	{
+		cout << "The RHASH is as follows: " << endl;
+		cout << tree.at(index).getRHASH() << endl;
+	}
+	if (tree.at(index).getLHIST() != "")
+	{
+		cout << "The LHIST is as follows: " << endl;
+		cout << tree.at(index).getLHIST() << endl;
+	}
+	if (tree.at(index).getRHIST() != "")
+	{
+		cout << "The RHASH is as follows: " << endl;
+		cout << tree.at(index).getRHIST() << endl;
+	}
+	
     if (index > 1) 
 	{
         cout << "The parent is node " << index/2 << ", with ID " << tree.at(index/2).getID()<< "." << endl;
@@ -138,20 +151,21 @@ void Trackingtree::change_raw_EVENT()
   unsigned long int index_CRE;
   cout<< "Which event do you want to change?" <<endl;
   cout << "There are currently " << number_of_nodes << " entries in the tracking tree." << endl;
-  cout << "Enter an integer index : ";
+  cout << "Enter an integer index followed by the changes : ";
   cin>>index_CRE;
   cout << endl;
 
-  cout << "The current node: " << endl;
+  cout << "The node that before it was changed: " << endl;
   print_node(index_CRE);
-  cout << endl;
+  cout << endl;  
+  string event;   
+  getline(cin, event);
   
-  cout << "Enter changes to the node's event: " << endl;
-  string event;
-  cin >> event;
   tree.at(index_CRE).setEVENT(event);
   
-  update_node(index_CRE);
+  update_node(index_CRE); 
+  cout << "The node that after it was changed: " << endl;
+  print_node(index_CRE);
 
   cout << "Tracking tree updated." << endl << endl;
 }
