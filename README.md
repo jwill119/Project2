@@ -25,3 +25,10 @@ Last updated: 12/8/2018, Jacob Williams
 I am working on trackingtree.cpp, trying to get adding-nodes to work.
 Currently it appears that new events are not properly stored in the tracking tree. Additionally,
 the time does not hash into the random PID correctly.
+
+UPDATE 12:11pm MDT --- The add\_node() function seems to work now.
+Don't think update\_node() does, yet; neither does print\_node().
+
+- At the least, updating the node's ID does *not* work.
+
+UPDATE 12:32pm --- getID() and related functions do not work.

@@ -13,9 +13,11 @@
 
 using std::string;
 using std::getline;
+
+
 Trackingtree::Trackingtree() {
-  index_ = 0;            
-  number_of_nodes = 0;   //sets the number of node in the tree to 0
+    index_ = 0;            
+    number_of_nodes = 0;
 }
 
 Trackingtree::~Trackingtree() {
@@ -24,8 +26,8 @@ Trackingtree::~Trackingtree() {
 
 
 void Trackingtree::add_node() {
+    // First node add
     if (is_empty()) {
-      cout << "Tree is empty, adding new..." << endl;
       Node new_node;
       tree.push_back(new_node);
     
@@ -37,39 +39,63 @@ void Trackingtree::add_node() {
       string clockStr = to_string(theClock);
       
       string random_PID = hash_1(timeStr,clockStr);
-    
-      //sets the PID of the root node with a random string
       new_node.updatePID(random_PID);
     
+
       // asks for new event to be inputted, then stores new event in the node 
       string raw_event;
       cout << "Please enter the event to be stored in the tracking tree (max 1024 characters)"
           << endl;
       cout << "Type here:  ";
+      cin.ignore();
       getline(cin,raw_event);
+
       new_node.setEVENT(raw_event); 
+
+
+      // Testing
+      cout << "The raw event is: " << endl << new_node.getEVENT() << endl;
+      cout << "The PID is now " << new_node.getPID() << "." << endl << endl;
+      // End test
 
       index_++;
       number_of_nodes++;
       cout << "Base adding finished, update next..." << endl;
   
+      // Other nodes
     } else {
-      Node new_node; 
-      tree.push_back(new_node);  
+        index_++;        // Have to do this first to get the PID properly
+        Node new_node; 
+        tree.push_back(new_node);  
+      
+        //adds the PID to the new node 
+        string thePID = tree[index_ /2].getID();
+        cout << "Parent's ID is: " << thePID << endl;
+        new_node.updatePID(thePID);
+      
+        // asks for new event to be inputed then stores new event in the node 
+        string raw_event;            
+        cout << "Please enter the event to be stored in the tracking tree (max 1024 characters)"
+          << endl;
+        cout << "Type here:  ";
+        cin.ignore();
+        getline(cin, raw_event);
+        new_node.setEVENT(raw_event); 
+
+      
+        // Testing
+        string didItWork = new_node.getEVENT();
+        cout << "The raw event is: " << endl << didItWork << endl;
+        cout << "The PID is now " << new_node.getPID() << "." << endl << endl;
+        // End test
     
-    
-      //adds the PID to the new node 
-      string PID = tree.at((index_/2)).getID();
-      new_node.updatePID(PID);
-    
-      // asks for new event to be inputed then stores new event in the node 
-      string raw_event;            
-      getline(cin, raw_event);
-      new_node.setEVENT(raw_event); 
-    
-      index_++;
-      number_of_nodes++;
+        number_of_nodes++;
     }   
+
+    cout << "There are now " << tree.size() << " nodes" << endl;
+    cout << "So far the raw event and PID have been set." << endl;
+    cout << "The PID is " << tree[index_ - 1].getPID() << endl;
+    cout << "and the raw event is " << tree[index_ - 1].getEVENT() << endl << endl;
     update_node(index_);
 }
 
@@ -77,9 +103,16 @@ void Trackingtree::update_node(int theIndex) {
     // This is never called directly by user --- add_node() calls it
 	
     int index_in = theIndex - 1;
-    //hashes the ID of the new node, and stores new ID 
+
+    // Hash the new ID and store it
+    
+    // Testing also
+    cout << "The PID is " << tree[index_in].getPID() << endl;
+    cout << "and the event is " << tree.at(index_in).getEVENT() << endl;
 	string newID = hash_1(tree.at(index_in).getPID(), tree.at(index_in).getEVENT());
+    cout << "The ID will be " << newID << endl;
 	tree.at(index_in).updateID(newID);
+    cout << "The ID has become " << tree.at(index_in).getID() << endl;
     cout << "Updated ID." << endl;
 
 	while (index_in > 1) {
@@ -133,12 +166,14 @@ void Trackingtree::change_raw_EVENT() {
         return;
     }
 
-    unsigned long int index_CRE;
+    unsigned long int index_CRE, visualIndex;
     cout<< "Which event do you want to change?" <<endl;
     cout << "There are currently " << number_of_nodes << " entries in the tracking tree." << endl;
     cout << "Enter an integer index : ";
-    cin >> index_CRE;
+    cin >> visualIndex;
     cout << endl;
+
+    index_CRE = visualIndex - 1;
 
     cout << "The current node: " << endl;
     print_node(index_CRE);
