@@ -49,7 +49,7 @@ void Trackingtree::add_node()
 	getline(cin, raw_event);
     
     new_node.setEVENT(raw_event); 
-    
+	new_node.updateID(hash_1(raw_event, random_PID));
     tree.push_back(new_node);
     index_ = 0;
     number_of_nodes++;
@@ -82,13 +82,15 @@ void Trackingtree::update_node(int index_in)
 
 	if (index_in > 1)
 	{
-		if (index_in % 2 == 0) {
+		if (index_in % 2 == 0) 
+		{
 			string update = hash_2(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
 				tree.at(index_in).getID(), tree.at(index_in).getLHASH(),
 				tree.at(index_in).getRHASH());
 			tree.at((index_in / 2)).updateLHASH(update);
 		}
-		else if (index_in % 2 == 1) {
+		else if (index_in % 2 == 1) 
+		{
 			string update = hash_2(tree.at(index_in).getPID(), tree.at(index_in).getEVENT(),
 				tree.at(index_in).getID(), tree.at(index_in).getLHASH(),
 				tree.at(index_in).getRHASH());
