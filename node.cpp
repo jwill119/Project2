@@ -17,8 +17,6 @@ Node::Node() {
     RHASH = "";
     LHIST.resize(0);
     RHIST.resize(0);
-
-    cout << "Node created." << endl << endl;
 }
 
 // Empty destructor
@@ -58,11 +56,27 @@ void Node::updateRHASH(string theRHASH) {
 }
 
 void Node::updateLHIST(string theLHIST) {
-    LHIST.push_back(theLHIST);
+	if (LHIST == "")
+	{
+		LHIST += theLHIST;
+	}
+	else
+	{
+		LHIST += "-";
+		LHIST += theLHIST;
+   	}	
 }
 
 void Node::updateRHIST(string theRHIST) {
-    RHIST.push_back(theRHIST);
+	if (RHIST == "")
+	{
+		RHIST += theRHIST;
+	}
+	else
+	{
+		RHIST += "-";
+		RHIST += theRHIST;
+	}
 }
 
 // Accessor functions
@@ -91,12 +105,12 @@ string Node::getRHASH(void)
     return RHASH;
 }
 
-vector<string> Node::getLHIST(void)
+string Node::getLHIST(void)
 {
     return LHIST;
 }
 
-vector<string> Node::getRHIST(void) 
+string Node::getRHIST(void) 
 {
     return RHIST;
 }
