@@ -34,4 +34,4 @@ Don't think update\_node() does, yet; neither does print\_node().
 UPDATE 12:32pm --- getID() and related functions do not work.
 
 
-UPDATE 12/12: It seems some of the confusion was update/version related, or maybe compiler-related?? Anyway we have worked everything out, albeit mostly offline.
+UPDATE 12/12: It seems some of the confusion was update/version related, or maybe compiler-related?? Anyway we have worked everything out, albeit mostly offline. DONE!
