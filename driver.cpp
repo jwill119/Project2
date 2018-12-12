@@ -31,8 +31,7 @@ int main() {
         our_tree.change_raw_EVENT(); 
 
       }else if(command == "print_node")
-      {
-        
+      {        
 		 unsigned long int node_at;
         cin >> node_at;
         if(node_at <= our_tree.get_number_of_nodes() && node_at >= 0)
