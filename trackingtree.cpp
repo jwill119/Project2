@@ -12,10 +12,6 @@ Trackingtree::Trackingtree()
 {
   index_ = 0;             //sets index to 1 
   number_of_nodes = 0;   //sets the number of node in the tree to 0
-  
-  //!!This, make the driver harder then it needs to be  
-  //add_node();          //call the function add_node to add the root node ofthe tree
-  
 }
 
 Trackingtree::~Trackingtree()
@@ -108,6 +104,7 @@ void Trackingtree::update_node(int index_in)
 void Trackingtree::print_node(int index)
 {
 	index;	
+    cout << "-------------------------------------------------------------" << endl;
 	cout << "This is node " << index << ", with ID " << tree.at(index).getID() <<"." << endl;
     cout << "The raw event is as follows: " << endl;
     cout << tree.at(index).getEVENT() << endl << endl;
@@ -136,6 +133,7 @@ void Trackingtree::print_node(int index)
 	{
         cout << "The parent is node " << (index-1)/2 << ", with ID " << tree.at((index-1)/2).getID()<< "." << endl << endl;
     }
+    cout << "-------------------------------------------------------------" << endl;
     cout << endl;
 
 }
@@ -153,24 +151,29 @@ void Trackingtree::change_raw_EVENT()
   unsigned long int index_CRE;
   cout<< "Which event do you want to change?" <<endl;
   cout << "There are currently " << number_of_nodes << " entries in the tracking tree." << endl;
-  cout << "Enter an integer index followed by the changes : ";
+  cout << "Enter an integer index for the node to change:  ";
   cin>>index_CRE;
   cout << endl;
 
-  cout << "The node that before it was changed: " << endl;
+  cout << "The node as it currently stands: " << endl;
   print_node(index_CRE);
   cout << endl;  
-  string event;   
+
+  // Get new event
+  string event;
+  cout << "Enter new event:  ";
   cin.ignore();
   getline(cin, event);
   
+  // Set event in the tree
   tree.at(index_CRE).setEVENT(event);
-  
+
+  // Update the tree with the new event. 
   update_node(index_CRE); 
-  cout << "The node that after it was changed: " << endl;
+  cout << "The node after it was changed: " << endl;
   print_node(index_CRE);
 
-  cout << "Tracking tree updated." << endl << endl;
+  cout << "Tracking tree updated. Yay!" << endl << endl;
 }
 
 void Trackingtree::beginning()
